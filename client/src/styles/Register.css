@@ -1,0 +1,77 @@
+.register-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px auto;
+    padding: 20px;
+    max-width: 400px;
+    background-color: #101010; /* Fondo oscuro */
+    border-radius: 8px;
+  }
+  
+  .register-title {
+    color: #FFD700; /* Amarillo */
+    margin-bottom: 20px;
+  }
+  
+  .register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+  
+  .register-input {
+    padding: 10px;
+    border: 2px solid #800080; /* Amarillo */
+    border-radius: 5px;
+    background-color: #121212; /* Fondo oscuro */
+    color: white;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .register-input:hover {
+    border-color: #FFD700; /* Morado */
+  }
+  
+  .register-input:focus {
+    border-color: #FFD700; /* Morado al enfocar */
+  }
+  
+  .bt-register-submit {
+    padding: 10px 20px;
+    background-color: #FFD700; /* Amarillo */
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .bt-register-submit:hover {
+    background-color: #800080; /* Morado */
+    color: white; /* Cambia el texto a blanco */
+  }
+  
+  .register-feedback {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .register-feedback.error {
+    color: red;
+  }
+  
+  .register-feedback.success {
+    color: green;
+  }
+  
+  .bt-register-submit:disabled {
+    background-color: #ccc; /* Botón gris */
+    color: #666;
+    cursor: not-allowed;
+  }

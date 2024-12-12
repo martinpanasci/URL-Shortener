@@ -1,0 +1,217 @@
+/* General container adjustments */
+.welcome-container {
+  position: relative; /* Para posicionar el botón dentro del contenedor */
+  text-align: center;
+  margin: 50px auto;
+  padding: 20px;
+  max-width: 800px;
+  background-color: #101010;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Title adjustments */
+.welcome-title {
+  font-size: 2rem;
+  color: #FFD700;
+}
+
+/* User message */
+.welcome-message {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: white;
+}
+
+/* Logout button positioned at the top right */
+.bt-go-back {
+  position: absolute; /* Posiciona el botón en la parte superior derecha */
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #FFD700;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.bt-go-back:hover {
+  background-color: #800080;
+  color: white;
+}
+
+/* Subtitle adjustments */
+.welcome-subtitle {
+  font-size: 1.5rem;
+  color: #FFD700;
+  margin-top: 30px;
+}
+
+/* Table adjustments */
+.url-table {
+  width: 100%;
+  border-collapse: collapse; /* Quitar espacios entre celdas */
+  margin-top: 20px;
+  background-color: #101010;
+}
+
+.url-table th,
+.url-table td {
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #800080; /* Borde amarillo */
+}
+
+.url-table th {
+  background-color: #101010; /* Fondo oscuro para encabezado */
+  color: #FFD700; /* Texto amarillo */
+}
+
+.url-table td {
+  background-color: #121212; /* Fondo oscuro para celdas */
+  color: #ffffff; /* Texto blanco */
+}
+
+
+
+.url-table td a.url-link {
+  color: #ffffff; /* Enlaces en blanco */
+  text-decoration: underline; /* Subrayado para destacar enlaces */
+  word-wrap: break-word; /* Permitir saltos de línea en palabras largas */
+  white-space: normal; /* Saltos de línea automáticos */
+}
+
+.url-table td a.url-link:hover {
+  color: #FFD700; /* Amarillo al pasar el mouse */
+}
+
+.url-table td:first-child {
+  max-width: 300px; /* Ancho máximo para URL larga */
+}
+
+.url-table td:nth-child(2) {
+  max-width: 200px; /* Ancho máximo para URL corta */
+}
+
+.url-table td:nth-child(3),
+.url-table td:nth-child(4) {
+  text-align: center; /* Alinear centrado para clicks y fechas */
+}
+
+
+/* Link adjustments */
+.url-table a {
+  color: white; /* Blanco para que resalten */
+  text-decoration: underline; /* Subrayado para enfatizar que son enlaces */
+}
+
+.url-table a:hover {
+  color: #FFD700; /* Amarillo al pasar el mouse */
+}
+
+.url-link {
+  color: #ffffff; /* Color blanco */
+  text-decoration: underline; /* Subrayado */
+  display: -webkit-box; /* Habilitar el truncamiento con ellipsis */
+  -webkit-line-clamp: 2; /* Máximo de líneas visibles */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal; /* Permitir saltos de línea */
+  cursor: pointer; /* Indicador de que es interactivo */
+}
+
+.url-link:hover {
+  color: #FFD700; /* Amarillo al pasar el mouse */
+  text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+
+.bt-delete-url {
+  background: transparent;
+  border: none;
+  color: #ffd700; /* Amarillo */
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* Asegura que ocupe el ancho completo de la celda */
+  height: 100%; /* Asegura que ocupe el alto completo de la celda */
+  transition: color 0.3s ease;
+}
+
+.bt-delete-url:hover {
+  color: #ff4d4d; /* Rojo al pasar el mouse */
+}
+
+.bt-delete-url:focus {
+  outline: none;
+}
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro con transparencia */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Asegura que esté por encima de otros elementos */
+}
+
+/* Modal container */
+.modal {
+  background-color: #121212; /* Fondo oscuro del modal */
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 400px;
+}
+
+/* Modal text */
+.modal p {
+  color: #ffffff; /* Texto blanco */
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+/* Confirm button */
+.bt-confirm {
+  padding: 10px 20px;
+  margin-right: 10px;
+  background-color: #FFD700; /* Amarillo */
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.bt-confirm:hover {
+  background-color: #800080; /* Morado */
+  color: white;
+}
+
+/* Cancel button */
+.bt-cancel {
+  padding: 10px 20px;
+  background-color: transparent; /* Fondo transparente */
+  color: #FFD700; /* Amarillo */
+  border: 2px solid #FFD700; /* Borde amarillo */
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.bt-cancel:hover {
+  background-color: #FFD700; /* Amarillo */
+  color: black;
+}
