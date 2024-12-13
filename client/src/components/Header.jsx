@@ -5,7 +5,7 @@ import '../styles/Header.css';
 function Header() {
   const navigate = useNavigate();
   const isAuthenticated = !!localStorage.getItem('token'); // Verificar si hay un token
-
+  
   const handleLoginRedirect = () => {
     if (isAuthenticated) {
       navigate('/welcome'); // Redirigir a la página de bienvenida

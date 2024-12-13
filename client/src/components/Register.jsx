@@ -11,6 +11,7 @@ function Register() {
   });
   const [feedback, setFeedback] = useState({ message: '', type: '' });
   const [loading, setLoading] = useState(false);
+  const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:4000';
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -38,7 +39,7 @@ function Register() {
 
     try {
       // Llamada al backend
-      const response = await axios.post('http://localhost:3000/register', {
+      const response = await axios.post(`${BASE_URL}/register`, {
         nombre: formData.name,
         email: formData.email,
         contraseña: formData.password,

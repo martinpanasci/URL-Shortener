@@ -16,6 +16,7 @@ function Welcome() {
   const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:4000';
 
   useEffect(() => {
+    const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:4000';
     const token = localStorage.getItem('token');
     if (!token) {
       navigate('/login');
@@ -34,7 +35,7 @@ function Welcome() {
             return;
           }
 
-          const response = await axios.get('http://localhost:3000/usersUrls', {
+          const response = await axios.get(`${BASE_URL}/usersUrls`, {
             headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -68,7 +69,7 @@ function Welcome() {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:3000/deleteUrls/${urlToDelete}`, {
+      await axios.delete(`${BASE_URL}/deleteUrls/${urlToDelete}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
@@ -123,7 +124,7 @@ function Welcome() {
                     </td>
                     <td>
                       <p>
-                        <a href={`http://localhost:3000/${url.short_url}`} className="url-link" target="_blank" rel="noopener noreferrer">
+                        <a href={`${BASE_URL}/${url.short_url}`} className="url-link" target="_blank" rel="noopener noreferrer">
                           {`${BASE_URL}/${url.short_url}`}
                         </a>
                       </p>

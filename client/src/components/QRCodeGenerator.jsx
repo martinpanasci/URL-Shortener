@@ -5,6 +5,7 @@ import "../styles/QRCodeGenerator.css"
 function QRCodeGenerator() {
     const [inputUrl, setInputUrl] = useState('');
     const [qrContent, setQrContent] = useState(''); // Estado separado para el QR generado
+    
   
     const handleGenerateQR = () => {
       if (inputUrl.trim() === '') {

@@ -13,6 +13,7 @@ function URLShortener() {
     const [isLoged, setIsLoged] = useState(false);
     const [customSlug, setCustomSlug] = useState('');
     const [showCustomInput, setShowCustomInput] = useState(false);
+    const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:4000';
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -31,12 +32,12 @@ function URLShortener() {
             const headers = token ? { Authorization: `Bearer ${token}` } : {};
 
             const response = await axios.post(
-                'http://localhost:3000/shortenURL',
+                `${BASE_URL}/shortenURL`,
                 { longUrl, customSlug: showCustomInput ? customSlug : null },
                 { headers }
             );
 
-            setShortUrl(`http://localhost:3000/${response.data.shortUrl}`);
+            setShortUrl(`${BASE_URL}/${response.data.shortUrl}`);
             setExpiryDate(new Date(response.data.expiryDate).toLocaleString());
             setFeedback('¡URL acortada con éxito!');
             setCustomSlug('');

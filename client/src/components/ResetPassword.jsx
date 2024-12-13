@@ -10,8 +10,10 @@ function ResetPassword() {
   const [feedback, setFeedback] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  
 
   const handleSubmit = async (e) => {
+    const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:4000';
     e.preventDefault();
 
     if (!password || !confirmPassword) {
@@ -31,7 +33,7 @@ function ResetPassword() {
       setLoading(true);
       setFeedback({ message: '', type: '' });
 
-      const response = await axios.post('http://localhost:3000/resetpassword', {
+      const response = await axios.post(`${BASE_URL}/resetpassword`, {
         token,
         newPassword: password,
       });

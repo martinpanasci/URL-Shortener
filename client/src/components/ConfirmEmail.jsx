@@ -9,11 +9,13 @@ const ConfirmEmail = () => {
   const [feedback, setFeedback] = useState('');
   const [loading, setLoading] = useState(true);
   const [success, setSuccess] = useState(false); // Para diferenciar entre éxito y error
+  
 
   useEffect(() => {
+    const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:4000';
     const confirmEmail = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/confirmEmail/${token}`);
+        const response = await axios.get(`${BASE_URL}/confirmEmail/${token}`);
         if (response.status === 200) {
           setFeedback(response.data.message || '¡Correo confirmado con éxito!');
           setSuccess(true);

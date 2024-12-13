@@ -6,6 +6,7 @@ function ForgotPassword() {
   const [email, setEmail] = useState('');
   const [feedback, setFeedback] = useState('');
   const [loading, setLoading] = useState(false);
+  const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:4000';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,7 +19,7 @@ function ForgotPassword() {
     try {
       setLoading(true);
       setFeedback('');
-      const response = await axios.post('http://localhost:3000/forgotpassword', { email });
+      const response = await axios.post(`${BASE_URL}/forgotpassword`, { email });
       setFeedback(response.data.message || 'Se envió un correo para recuperar la contraseña');
     } catch (error) {
       if (error.response) {
