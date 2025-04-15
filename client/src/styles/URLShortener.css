@@ -138,8 +138,72 @@
 
 .url-buttons {
   display: flex; /* Alinea los botones en una fila */
-  gap: 10px; /* Espacio entre los botones */
+  gap: 10px; /* Espacio uniforme entre botones */
   justify-content: center; /* Centra los botones en el contenedor */
-  margin-top: 15px; /* Espacio superior */
+  align-items: center; /* Alinea verticalmente */
+  margin-top: 15px;
   margin-bottom: 25px;
+}
+
+/* Estilos responsivos para dispositivos pequeños */
+@media (max-width: 768px) {
+  .url-shortener-container {
+    margin: 20px auto;
+    padding: 15px;
+    width: 90%; /* Ajustar el ancho del contenedor */
+  }
+
+  .url-input {
+    width: 100%; /* Input ocupa el ancho completo */
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .url-buttons {
+    flex-direction: column; /* Los botones se apilan en columna */
+    gap: 10px;
+  }
+
+  .bt-url-submit,
+  .bt-url-custom {
+    margin: 0;
+    width: 100%; /* Botones ocupan todo el ancho */
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .url-result {
+    font-size: 0.9rem; /* Reduce el tamaño del texto */
+  }
+
+  .url-not-loged {
+    font-size: 12px; /* Texto más pequeño */
+  }
+}
+
+@media (max-width: 480px) {
+  .url-shortener-container {
+    padding: 10px;
+  }
+
+  .url-input {
+    padding: 6px;
+    font-size: 0.8rem;
+  }
+
+  .bt-url-submit,
+  .bt-url-custom {
+    padding: 8px;
+    font-size: 0.8rem;
+  }
+
+  .url-copy-container {
+    display: block; /* Ajusta el espacio del botón copiar */
+    margin-top: 10px;
+  }
+
+  .tooltip {
+    font-size: 0.8rem; /* Tooltip más pequeño */
+    padding: 5px 10px;
+  }
 }

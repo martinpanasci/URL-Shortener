@@ -86,3 +86,63 @@
     background-color: #800080; /* Morado */
     color: white; /* Cambia el texto a blanco */
 }
+
+/* Estilos responsivos para tablets y móviles */
+@media (max-width: 768px) {
+    .qr-generator-container {
+      margin: 20px auto;
+      padding: 15px;
+      width: 90%; /* Contenedor más ancho en pantallas pequeñas */
+    }
+  
+    .qr-generator-form {
+      gap: 10px; /* Espacio reducido entre elementos */
+    }
+  
+    .qr-input {
+      width: 100%; /* Input ocupa todo el ancho */
+      padding: 8px;
+      font-size: 0.9rem; /* Tamaño del texto más pequeño */
+    }
+  
+    .bt-qr-generate {      
+      font-size: 0.9rem;
+    }
+  
+    .qr-result {
+      margin-top: 10px;
+    }
+  
+    .qr-code {
+      width: 150px; /* Reduce el tamaño del QR */
+      height: 150px;
+      padding: 5px;
+    }
+  
+    .bt-qr-download {      
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .qr-generator-title {
+      font-size: 1.2rem; /* Título más pequeño */
+    }
+  
+    .qr-input {
+      font-size: 0.8rem;
+      padding: 6px;
+    }
+  
+    .bt-qr-generate,
+    .bt-qr-download {
+      padding: 8px 0;
+      font-size: 0.8rem;
+    }
+  
+    .qr-code {
+      width: 120px; /* Tamaño aún más reducido */
+      height: 120px;
+    }
+  }
+  

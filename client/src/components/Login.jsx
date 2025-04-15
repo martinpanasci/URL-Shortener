@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import '../styles/Login.css';
 
 function Login() {
@@ -8,7 +8,7 @@ function Login() {
   const [feedback, setFeedback] = useState({ message: '', type: '' });
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:4000';
+  const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:3000';
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -94,7 +94,9 @@ function Login() {
         </button>
       </form>
       <p className="forgot-password">
-        <a href="/forgot-password" className="forgot-password-link">¿Olvidaste tu contraseña?</a>
+        <Link to="/forgotPassword" className="forgot-password-link">
+          ¿Olvidaste tu contraseña?
+        </Link>
       </p>
       {feedback.message && (
         <p className={`login-feedback ${feedback.type === 'error' ? 'error' : 'success'}`}>
@@ -105,4 +107,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Login; 

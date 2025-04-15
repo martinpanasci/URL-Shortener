@@ -13,10 +13,10 @@ function Welcome() {
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [urlToDelete, setUrlToDelete] = useState(null);
-  const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:4000';
+  const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:3000';
 
   useEffect(() => {
-    const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:4000';
+    const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:3000';
     const token = localStorage.getItem('token');
     if (!token) {
       navigate('/login');
@@ -104,44 +104,46 @@ function Welcome() {
 
           <h2 className="welcome-subtitle">Tus URLs Acortadas</h2>
           {urls.length > 0 ? (
-            <table className="url-table">
-              <thead>
-                <tr>
-                  <th>URL Larga</th>
-                  <th>URL Corta</th>
-                  <th>Clicks</th>
-                  <th>Fecha de Expiración</th>
-                  <th>Accion</th>
-                </tr>
-              </thead>
-              <tbody>
-                {urls.map((url) => (
-                  <tr key={url.id}>
-                    <td>
-                      <a href={url.long_url} className="url-link" target="_blank" rel="noopener noreferrer" title={url.long_url}>
-                        {url.long_url}
-                      </a>
-                    </td>
-                    <td>
-                      <p>
-                        <a href={`${BASE_URL}/${url.short_url}`} className="url-link" target="_blank" rel="noopener noreferrer">
-                          {`${BASE_URL}/${url.short_url}`}
-                        </a>
-                      </p>
-                    </td>
-                    <td>{url.click_count}</td>
-                    <td>{url.expiry_date ? formatDate(url.expiry_date) : 'N/A'}</td>
-                    <td className="action-cell">
-                      <button className="bt-delete-url" onClick={() => openModal(url.id)}>
-                        <FontAwesomeIcon icon={faTrash} />
-                      </button>
-                    </td>
+            <div className="url-table-container">
+              <table className="url-table">
+                <thead>
+                  <tr>
+                    <th>URL Larga</th>
+                    <th>URL Corta</th>
+                    <th>Clicks</th>
+                    <th>Fecha de Expiración</th>
+                    <th>Accion</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {urls.map((url) => (
+                    <tr key={url.id}>
+                      <td>
+                        <a href={url.long_url} className="url-link" target="_blank" rel="noopener noreferrer" title={url.long_url}>
+                          {url.long_url}
+                        </a>
+                      </td>
+                      <td>
+                        <p>
+                          <a href={`${BASE_URL}/${url.short_url}`} className="url-link" target="_blank" rel="noopener noreferrer">
+                            {`${BASE_URL}/${url.short_url}`}
+                          </a>
+                        </p>
+                      </td>
+                      <td>{url.click_count}</td>
+                      <td>{url.expiry_date ? formatDate(url.expiry_date) : 'N/A'}</td>
+                      <td className="action-cell">
+                        <button className="bt-delete-url" onClick={() => openModal(url.id)}>
+                          <FontAwesomeIcon icon={faTrash} />
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           ) : (
-            <p>No tienes URLs acortadas todavía.</p>
+            <p className="welcome-message">No tienes URLs acortadas todavía.</p>
           )}
 
           {showModal && (

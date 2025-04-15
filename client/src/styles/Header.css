@@ -26,30 +26,35 @@
   border-radius: 50%;
 }
 
+/* Navegación en pantallas grandes */
 .header-nav {
   display: flex;
   gap: 15px;
 }
 
-/* Botones del Header (Login, Register, Cuenta) */
+/* Botones del Header */
 .nav-link {
   background: none;
   border: none;
-  color: white; /* Texto blanco */
+  color: white;
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  text-decoration: none; /* Sin subrayado */
-  transition: color 0.3s ease, transform 0.3s ease; /* Transición suave */
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: block; /* Asegura que los enlaces ocupen todo el espacio */
+  padding: 8px 4px; /* Ajusta el padding para que sea uniforme */
+  margin: 0; /* Elimina márgenes innecesarios */
+  text-align: left; /* Alinea el texto a la izquierda */
+  line-height: 1;
 }
 
-/* Hover: Cambia el color y agranda el texto */
 .nav-link:hover {
-  color: #FFD700; /* Amarillo */
-  transform: scale(1.1); /* Agranda ligeramente el texto */
+  color: #FFD700;
+  transform: scale(1.1);
 }
 
-/* Botones en móviles */
+/* Menú hamburguesa */
 .hamburger-menu {
   display: none;
   flex-direction: column;
@@ -77,6 +82,7 @@
     right: 20px;
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    padding: 10px;
   }
 
   .header-nav.open {

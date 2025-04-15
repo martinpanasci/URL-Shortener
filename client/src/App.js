@@ -21,10 +21,10 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/forgotPassword" element={<ForgotPassword />} />
           <Route path="/welcome" element={<Welcome />} />
           <Route path="/confirmEmail/:token" element={<ConfirmEmail />} />
-          <Route path="/reset-password/:token" element={<ResetPassword />} />
+          <Route path="/resetPassword/:token" element={<ResetPassword />} />
         </Routes>
       </div>
     </Router>
